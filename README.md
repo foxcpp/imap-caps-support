@@ -6,6 +6,9 @@ implementations.
 
 Disclaimer: Updated when I feel like it, correct as I like it.
 
+Side note: More complete table regarding servers support can be found on
+imapwiki: https://www.imapwiki.org/Specs
+
 Capabilities list taken from related IANA registry at 2019-06-01.
 Obsolete extensions are not included.
 
@@ -51,26 +54,28 @@ ACL	[RFC4314]
 ---------------
 ### Clients
 - [x] Thunderbird 60.6.1
-- [ ] KDE Mail ???
-- [ ] K-9 Mail ???
+- [x] KDE Mail (kimap 18.08.3)
+- [ ] K-9 Mail
 - [x] Roundcube 1.3.9
 - [ ] Rainloop ???
-- [ ] mutt ???
+- [x] mutt 1.10
+- [x] balsa 2.5.6
 
 ### Server
 - [x] Dovecot 2.3.4
 - [x] Cyrus 3.0.8
+- [x] Courier 1.0.6
 
 
 APPENDLIMIT	[RFC7889]
 -----------------------
 ### Clients
-- [ ] Thunderbird ??
-- [ ] KDE Mail ???
+- [ ] Thunderbird 
+- [ ] KDE Mail 
 - [ ] K-9 Mail ???
-- [ ] Roundcube ???
-- [ ] Rainloop ???
-- [ ] mutt ???
+- [ ] Roundcube 
+- [ ] Rainloop 
+- [ ] mutt 
 
 ### Server
 - [ ] Dovecot ???
