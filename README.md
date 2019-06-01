@@ -2,6 +2,7 @@ IMAP clients capability support status index
 =============================================
 
 **Disclaimer:** Updated when I feel like it, correct as I like it.
+In most cases, information is taked from https://codesearch.debian.net.
 
 The table for servers support can be found on imapwiki:
 https://www.imapwiki.org/Specs
@@ -13,72 +14,72 @@ A client is considered to support extension if it checks its support on the
 server by looking at returned capabilities list. Even if it doesn't actually
 makes any use of it.
 
-**Legend:** `?` - unknown, `+` - supports, `-` - doesn't support (check git blame
-for update timestamp)
+**Legend:** `?` - unknown (probably doesn't support), `+` - supports, `-` -
+doesn't support (check git blame for update timestamp)
 
-Capability Name                    | Thunderbird | KMail | Roundcube | Rainloop | mutt | balsa | geary |
------------------------------------|:-----------:|:-----:|:---------:|:--------:|:----:|:-----:|:-----:|
-[ACL][RFC4314]                     |      +      |   +   |     +     |    -     |  +   |   +   |   ?   | 
-[ANNOTATE-EXPERIMENT-1][RFC5257]   |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[APPENDLIMIT][RFC7889]             |      -      |   -   |     -     |    -     |  -   |   -   |   ?   | 
-[BINARY][RFC3516]                  |      -      |   -   |     +     |    -     |  -   |   +   |   ?   | 
-[CATENATE][RFC4469]                |      -      |   -   |     -     |    -     |  -   |   -   |   ?   | 
-[CHILDREN][RFC3348]                |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[COMPRESS=DEFLATE][RFC4978]        |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[CONDSTORE][RFC7162]               |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[CONTEXT=SEARCH][RFC5267]          |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[CONTEXT=SORT][RFC5267]            |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[CONVERT][RFC5259]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[CREATE-SPECIAL-USE][RFC6154]      |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[ENABLE][RFC5161]                  |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[ESEARCH][RFC4731]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[ESORT][RFC5267]                   |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[FILTERS][RFC5466]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[I18NLEVEL=1][RFC5255]             |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[I18NLEVEL=2][RFC5255]             |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[ID][RFC2971]                      |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[IDLE][RFC2177]                    |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[IMAPSIEVE=][RFC6785]              |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[LANGUAGE][RFC5255]                |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[LIST-EXTENDED][RFC5258]           |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[LIST-MYRIGHTS][RFC8440]           |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[LIST-STATUS][RFC5819]             |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[LITERAL+][RFC7888]                |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[LITERAL-][RFC7888]                |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[LOGIN-REFERRALS][RFC2221]         |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[LOGINDISABLED][RFC2595]           |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[MAILBOX-REFERRALS][RFC2193]       |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[METADATA][RFC5464]                |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[METADATA-SERVER][RFC5464]         |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[MOVE][RFC6851]                    |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[MULTIAPPEND][RFC3502]             |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[MULTISEARCH][RFC7377]             |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[NAMESPACE][RFC2342]               |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[NOTIFY][RFC5465]                  |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[OBJECTID][RFC8474]                |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[QRESYNC][RFC7162]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[QUOTA][RFC2087]                   |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[REPLACE][RFC8508]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[RIGHTS=][RFC4314]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[SASL-IR][RFC4959]                 |      ?      |   +   |     +     |    +     |  +   |   +   |   +   | 
-[SAVEDATE][RFC8514]                |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[SEARCH=FUZZY][RFC6203]            |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[SEARCHRES][RFC5182]               |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[SORT][RFC5256]                    |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[SORT=DISPLAY][RFC5957]            |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[SPECIAL-USE][RFC6154]             |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[STARTTLS][RFC2595]                |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[STATUS=SIZE][RFC8438]             |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[THREAD][RFC5256]                  |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[UIDPLUS][RFC4315]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[UNAUTHENTICATE][RFC8437]          |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[UNSELECT][RFC3691]                |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[URLFETCH=BINARY][RFC5524]         |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[URL-PARTIAL][RFC5550]             |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[URLAUTH][RFC4467]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[UTF8=ACCEPT][RFC6855]             |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[UTF8=ONLY][RFC6855]               |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
-[WITHIN][RFC5032]                  |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   | 
+Capability Name                    | Thunderbird | KMail | Roundcube | Rainloop | mutt | balsa | geary | Evolution |
+-----------------------------------|:-----------:|:-----:|:---------:|:--------:|:----:|:-----:|:-----:|:----------|
+[ACL][RFC4314]                     |      +      |   +   |     +     |    -     |  +   |   +   |   -   |     -     | 
+[ANNOTATE-EXPERIMENT-1][RFC5257]   |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     -     | 
+[APPENDLIMIT][RFC7889]             |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     -     | 
+[BINARY][RFC3516]                  |      -      |   -   |     +     |    -     |  -   |   +   |   ?   |     ?     | 
+[CATENATE][RFC4469]                |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     ?     | 
+[CHILDREN][RFC3348]                |      +      |   -   |     -     |    -     |  -   |   +   |   +   |     +     | 
+[COMPRESS=DEFLATE][RFC4978]        |      +      |   -   |     -     |    -     |  -   |   +   |   -   |     -     | 
+[CONDSTORE][RFC7162]               |      +      |   +   |     +     |    +     |  -   |   -   |   -   |     +     | 
+[CONTEXT=SEARCH][RFC5267]          |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[CONTEXT=SORT][RFC5267]            |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[CONVERT][RFC5259]                 |      ?      |   -   |     -     |    -     |  -   |   -   |   -   |     ?     | 
+[CREATE-SPECIAL-USE][RFC6154]      |      -      |   -   |     +     |    -     |  -   |   -   |   -   |     ?     | 
+[ENABLE][RFC5161]                  |      +      |   -   |     +     |    -     |  +   |   -   |   -   |     ?     | 
+[ESEARCH][RFC4731]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   +   |   ?   |     ?     | 
+[ESORT][RFC5267]                   |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     ?     | 
+[FILTERS][RFC5466]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[I18NLEVEL=1][RFC5255]             |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     ?     | 
+[I18NLEVEL=2][RFC5255]             |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     ?     | 
+[ID][RFC2971]                      |      +      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[IDLE][RFC2177]                    |      +      |   +   |     -     |    -     |  +   |   +   |   +   |     +     | 
+[IMAPSIEVE=][RFC6785]              |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     -     | 
+[LANGUAGE][RFC5255]                |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     -     | 
+[LIST-EXTENDED][RFC5258]           |      +      |   ?   |     +     |    ?     |  ?   |   ?   |   ?   |     +     |  
+[LIST-MYRIGHTS][RFC8440]           |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     -     |  
+[LIST-STATUS][RFC5819]             |      ?      |   ?   |     +     |    +     |  ?   |   ?   |   +   |     +     |  
+[LITERAL+][RFC7888]                |      +      |   ?   |     +     |    ?     |  ?   |   +   |   ?   |     +     | 
+[LITERAL-][RFC7888]                |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     -     | 
+[LOGIN-REFERRALS][RFC2221]         |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     -     | 
+[LOGINDISABLED][RFC2595]           |      +      |   +   |     +     |    -     |  +   |   +   |   ?   |     -     | 
+[MAILBOX-REFERRALS][RFC2193]       |      -      |   -   |     -     |    -     |  -   |   -   |   -   |     -     | 
+[METADATA][RFC5464]                |      ?      |   +   |     +     |    -     |  -   |   -   |   -   |     -     | 
+[METADATA-SERVER][RFC5464]         |      ?      |   ?   |     +     |    -     |  -   |   -   |   -   |     -     | 
+[MOVE][RFC6851]                    |      +      |   +   |     +     |    -     |  -   |   -   |   ?   |     ?     | 
+[MULTIAPPEND][RFC3502]             |      ?      |   ?   |     ?     |    ?     |  ?   |   +   |   ?   |     ?     | 
+[MULTISEARCH][RFC7377]             |      ?      |   ?   |     ?     |    ?     |  ?   |   -   |   ?   |     ?     | 
+[NAMESPACE][RFC2342]               |      +      |   ?   |     ?     |    ?     |  +   |   +   |   ?   |     +     | 
+[NOTIFY][RFC5465]                  |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     +     | 
+[OBJECTID][RFC8474]                |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[QRESYNC][RFC7162]                 |      ?      |   ?   |     +     |    ?     |  ?   |   ?   |   ?   |     +     | 
+[QUOTA][RFC2087]                   |      +      |   +   |     +     |    +     |  ?   |   +   |   ?   |     +     | 
+[REPLACE][RFC8508]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[RIGHTS=][RFC4314]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[SASL-IR][RFC4959]                 |      ?      |   +   |     +     |    +     |  +   |   +   |   +   |     ?     | 
+[SAVEDATE][RFC8514]                |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[SEARCH=FUZZY][RFC6203]            |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[SEARCHRES][RFC5182]               |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[SORT][RFC5256]                    |      ?      |   ?   |     ?     |    ?     |  ?   |   +   |   ?   |     ?     | 
+[SORT=DISPLAY][RFC5957]            |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[SPECIAL-USE][RFC6154]             |      +      |   ?   |     +     |    +     |  ?   |   ?   |   +   |     +     | 
+[STARTTLS][RFC2595]                |      +      |   +   |     +     |    +     |  +   |   +   |   +   |     +     | 
+[STATUS=SIZE][RFC8438]             |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[THREAD][RFC5256]                  |      ?      |   ?   |     ?     |    ?     |  ?   |   +   |   ?   |     ?     | 
+[UIDPLUS][RFC4315]                 |      +      |   +   |     ?     |    ?     |  ?   |   +   |   ?   |     ?     | 
+[UNAUTHENTICATE][RFC8437]          |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[UNSELECT][RFC3691]                |      ?      |   ?   |     ?     |    ?     |  ?   |   +   |   ?   |     ?     | 
+[URLFETCH=BINARY][RFC5524]         |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[URL-PARTIAL][RFC5550]             |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[URLAUTH][RFC4467]                 |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
+[UTF8=ACCEPT][RFC6855]             |      ?      |   ?   |     ?     |    ?     |  +   |   ?   |   ?   |     +     | 
+[UTF8=ONLY][RFC6855]               |      ?      |   ?   |     ?     |    ?     |  +   |   ?   |   ?   |     +     | 
+[WITHIN][RFC5032]                  |      ?      |   ?   |     ?     |    ?     |  ?   |   ?   |   ?   |     ?     | 
 
 [RFC4314]: https://tools.ietf.org/html/rfc4314  
 [RFC5257]: https://tools.ietf.org/html/rfc5257  
